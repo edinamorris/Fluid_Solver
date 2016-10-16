@@ -10,21 +10,21 @@ INCLUDEPATH+=./include \
             /usr/local/include \
             ./glvu
 
-SOURCES+=$$PWD/FIELD_2D.cpp \
-         $$PWD/FIELD_3D.cpp \
-         $$PWD/HW1.cpp \
-         $$PWD/PARTICLE_SYSTEM.cpp \
-         $$PWD/PARTICLE.cpp \
-         $$PWD/WALL.cpp \
+SOURCES+=$$PWD/src/FIELD_2D.cpp \
+         $$PWD/src/FIELD_3D.cpp \
+         $$PWD/src/HW1.cpp \
+         $$PWD/src/PARTICLE_SYSTEM.cpp \
+         $$PWD/src/PARTICLE.cpp \
+         $$PWD/src/WALL.cpp \
          $$PWD/glvu.cpp
 
-HEADERS+=$$PWD/FIELD_2D.h \
-         $$PWD/FIELD_3D.h \
-         $$PWD/HW1.h \
-         $$PWD/PARTICLE_SYSTEM.h \
-         $$PWD/PARTICLE.h \
-         $$PWD/VEC3D.h \
-         $$PWD/VEC3F.h \
-         $$PWD/WALL.h
+HEADERS+=$$PWD/include/FIELD_2D.h \
+         $$PWD/include/FIELD_3D.h \
+         $$PWD/include/HW1.h \
+         $$PWD/include/PARTICLE_SYSTEM.h \
+         $$PWD/include/PARTICLE.h \
+         $$PWD/include/VEC3D.h \
+         $$PWD/include/VEC3F.h \
+         $$PWD/include/WALL.h
 
 LIBS+= -framework OpenGL -framework GLUT -framework Cocoa
