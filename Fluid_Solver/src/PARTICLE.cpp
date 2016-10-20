@@ -13,7 +13,7 @@ int count = 0;
 
 bool PARTICLE::isSurfaceVisible = false;
 bool PARTICLE::showArrows = false;
-unsigned int PARTICLE::count = 0;
+int PARTICLE::count = 0;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Constructor
@@ -48,12 +48,14 @@ void PARTICLE::draw()
   else 
     glMaterialfv(GL_FRONT, GL_DIFFUSE, blue);
   */
-  
+
+  m_diffuse=red;
   
   if (_flag && isSurfaceVisible)
     glMaterialfv(GL_FRONT, GL_DIFFUSE, purpleColor);
   else
-    glMaterialfv(GL_FRONT, GL_DIFFUSE, lightBlueColor);
+    //glMaterialfv(GL_FRONT, GL_DIFFUSE, lightBlueColor);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, m_diffuse);
   
   glPushMatrix();
     glTranslated(_position[0], _position[1], _position[2]);
@@ -103,7 +105,7 @@ void PARTICLE::clearParameters() {
   _acceleration = VEC3D();
   _density = 0.0;
   _pressure = 0.0;
-  
+  //m_diffuse = (0,0,0);
   
 }
 

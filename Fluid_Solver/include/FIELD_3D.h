@@ -34,11 +34,11 @@ public:
   }
   
   // accessors
-  int xRes() const { return _xRes; };
-  int yRes() const { return _yRes; };
-  int zRes() const { return _zRes; };
-  int cellCount() const { return _cellCount; };
-  particleVector* data() const { return _data; };
+  int xRes() const { return _xRes; }
+  int yRes() const { return _yRes; }
+  int zRes() const { return _zRes; }
+  int cellCount() const { return _cellCount; }
+  particleVector* data() const { return _data; }
   
 private:
   

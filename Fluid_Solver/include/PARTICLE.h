@@ -21,9 +21,6 @@ using namespace std;
 
 class PARTICLE {
   
-  
-
-  
 public:
   
   static bool isSurfaceVisible;
@@ -39,33 +36,38 @@ public:
   void draw();
 
   // clear all previous accumulated forces
-  void clearForce() { _force *= 0; };
+  void clearForce() { _force *= 0; }
 
   // accumulate forces
-  void addForce(VEC3D newForce) { _force += newForce; };
+  void addForce(VEC3D newForce) { _force += newForce; }
   
   void calculateAcceleration();
 
   // accessors
-  VEC3D& position() { return _position; };
-  VEC3D& velocity() { return _velocity; };
+  VEC3D& position() { return _position; }
+  VEC3D& velocity() { return _velocity; }
   VEC3D& acceleration() { return _acceleration; }
-  VEC3D& force()    { return _force; };
-  double& density()  { return _density; };
-  double& pressure() { return _pressure; };
-  bool& flag() { return _flag; };
-  int& id() { return _id; };
+  VEC3D& force()    { return _force; }
+  VEC3F& diffuse() {return m_diffuse;}
+  double& density()  { return _density; }
+  double& pressure() { return _pressure; }
+  bool& flag() { return _flag; }
+  int& id() { return _id; }
   VEC3D normal;
+
+  //mutators
+  void setDiffuse(VEC3F _diffuse){m_diffuse=_diffuse;}
   
   void clearParameters();
   
-  static unsigned int count;
+  static int count;
   
 private:  
   VEC3D _position;
   VEC3D _velocity;
   VEC3D _force;
   VEC3D _acceleration;
+  VEC3F m_diffuse;
   double _density;
   double _pressure;
   bool _flag;

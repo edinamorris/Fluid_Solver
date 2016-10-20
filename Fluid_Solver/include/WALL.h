@@ -24,8 +24,8 @@ public:
   void draw();
 
   // accessors
-  VEC3D& normal() { return _normal; };
-  VEC3D& point()  { return _point; };
+  VEC3D& normal() { return _normal; }
+  VEC3D& point()  { return _point; }
 
 private:  
   VEC3D _normal;
