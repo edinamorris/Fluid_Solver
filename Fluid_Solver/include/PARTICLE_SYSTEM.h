@@ -27,7 +27,7 @@
 #define WALL_K 10000.0 // wall spring constant
 #define WALL_DAMPING -0.9 // wall damping constant
 
-#define BOX_SIZE 0.4
+#define BOX_SIZE 0.5
 #define MAX_PARTICLES 3000
 
 #define INITIAL_SCENARIO SCENARIO_DAM

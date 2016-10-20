@@ -27,4 +27,6 @@ HEADERS+=$$PWD/include/FIELD_2D.h \
          $$PWD/include/VEC3F.h \
          $$PWD/include/WALL.h
 
-LIBS+= -framework OpenGL -framework GLUT -framework Cocoa
+macx: LIBS+= -framework OpenGL -framework GLUT -framework Cocoa
+
+linux: LIBS+= -OpenGL -lglut -lGLU

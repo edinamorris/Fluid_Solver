@@ -22,7 +22,11 @@
 #ifndef _GLVU_TEXT_H_
 #define _GLVU_TEXT_H_
 
+#ifdef __APPLE__
 #include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
 #include <stdio.h>
 #include <stdarg.h>
 

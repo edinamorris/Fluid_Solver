@@ -22,10 +22,15 @@
 #ifndef _GLVU_
 #define _GLVU_
 
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
+
 #include <stdlib.h>
 #include <time.h>            // FOR TIMED PATH PLAYBACK (glvu_camview)
 #include <sys/timeb.h>       // FOR FRAME TIMING (glvu_camview)
-#include <GLUT/glut.h>
 #include "glvuVec3f.h"
 #include "camera.h"
 
