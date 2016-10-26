@@ -43,10 +43,10 @@ public:
   VEC3D& operator*=(const VEC3D& v)     { x *= v.x; y *= v.y; z *= v.z; return *this; }
   
   // *this one* does the dot product
-  double dot(const VEC3D &b) const      { return x*b.x+y*b.y+z*b.z; };
-  void clear() { double zero = 0.0; _element[0] = zero; _element[1] = zero; _element[2] = zero; };
+  double dot(const VEC3D &b) const      { return x*b.x+y*b.y+z*b.z; }
+  void clear() { double zero = 0.0; _element[0] = zero; _element[1] = zero; _element[2] = zero; }
   
-  double magnitude() { return sqrt(_element[0] * _element[0] + _element[1] * _element[1] + _element[2] * _element[2]); };
+  double magnitude() { return sqrt(_element[0] * _element[0] + _element[1] * _element[1] + _element[2] * _element[2]); }
   VEC3D normalize() {
     double l = _element[0] * _element[0] + 
     _element[1] * _element[1] + 

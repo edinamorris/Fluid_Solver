@@ -28,7 +28,8 @@ public:
   
   //static unsigned int count;
   PARTICLE();
-  PARTICLE(const VEC3D& position);
+  //EM - CHANGE PARTICLES QUALITIES USING CONSTURCTOR, ADDED COLOUR CHANGE
+  PARTICLE(const VEC3D& position, VEC3F colour);
   PARTICLE(const VEC3D& position, const VEC3D& velocity);
   //~PARTICLE();
   
@@ -48,6 +49,7 @@ public:
   VEC3D& velocity() { return _velocity; }
   VEC3D& acceleration() { return _acceleration; }
   VEC3D& force()    { return _force; }
+  // EM - NEW
   VEC3F& diffuse() {return m_diffuse;}
   double& density()  { return _density; }
   double& pressure() { return _pressure; }
@@ -55,8 +57,10 @@ public:
   int& id() { return _id; }
   VEC3D normal;
 
-  //mutators
-  void setDiffuse(VEC3F _diffuse){m_diffuse=_diffuse;}
+  // EM - mutators
+  void setDiffuse(VEC3F _diffuse){m_diffuse.x=_diffuse.x;
+                                  m_diffuse.y=_diffuse.y;
+                                  m_diffuse.z=_diffuse.z;}
   
   void clearParameters();
   
@@ -67,6 +71,7 @@ private:
   VEC3D _velocity;
   VEC3D _force;
   VEC3D _acceleration;
+  // EM
   VEC3F m_diffuse;
   double _density;
   double _pressure;

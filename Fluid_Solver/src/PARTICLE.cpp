@@ -23,8 +23,9 @@ PARTICLE::PARTICLE()
 {
 }
 
-PARTICLE::PARTICLE(const VEC3D& position) :
-  _position(position)
+// EM - changed it so that paricle parameters can be set individually, colour density etc
+PARTICLE::PARTICLE(const VEC3D& position, VEC3F colour) :
+  _position(position), m_diffuse(colour)
 {
   myQuadric = NULL;
   _id = count++;
@@ -48,13 +49,11 @@ void PARTICLE::draw()
   else 
     glMaterialfv(GL_FRONT, GL_DIFFUSE, blue);
   */
-
-  m_diffuse=red;
   
   if (_flag && isSurfaceVisible)
     glMaterialfv(GL_FRONT, GL_DIFFUSE, purpleColor);
   else
-    //glMaterialfv(GL_FRONT, GL_DIFFUSE, lightBlueColor);
+    // EM - using particles colour to draw as individuals
     glMaterialfv(GL_FRONT, GL_DIFFUSE, m_diffuse);
   
   glPushMatrix();
@@ -105,7 +104,6 @@ void PARTICLE::clearParameters() {
   _acceleration = VEC3D();
   _density = 0.0;
   _pressure = 0.0;
-  //m_diffuse = (0,0,0);
   
 }
 
