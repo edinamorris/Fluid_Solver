@@ -61,18 +61,18 @@ void PARTICLE_SYSTEM::loadScenario(int newScenario) {
     // add particles
     
     //EM - left side - changed so initial colour of particles is set here
-    for (double y = -boxSize.y/2.0 +(boxSize.y/20); y < boxSize.y/4.0; y+= h/2.0) {
-      for (double x = -boxSize.x/2.0+(boxSize.x/20); x < -boxSize.x/4.0; x += h/2.0) {
-        for (double z = -boxSize.z/2.0; z < boxSize.z/2.0; z+= h/2.0) {
+    for (double y = -boxSize.y/2.0 +(boxSize.y/20); y < boxSize.y/6.0; y+= h/2) {
+      for (double x = -boxSize.x/2.0+(boxSize.x/20); x < -boxSize.x/4.0; x += h/2) {
+        for (double z = -boxSize.z/2.0; z < boxSize.z/2.0; z+= h/2) {
           firstGridCell.push_back(PARTICLE(VEC3D(x, y,z),VEC3F(1,0,0)));
         }
       }
     }
 
     //EM - right side - changed so initial colour of particles is set here
-    for (double y = -boxSize.y/2.0 +(boxSize.y/20); y < boxSize.y/2.0; y+= h/2.0) {
-      for (double x = -boxSize.x/4.0+(boxSize.x/2); x < boxSize.x/2.0 -(boxSize.x/20); x += h/2.0) {
-        for (double z = -boxSize.z/2.0; z < boxSize.z/2.0; z+= h/2.0) {
+    for (double y = -boxSize.y/2.0 +(boxSize.y/20); y < boxSize.y/4.0; y+= h/2) {
+      for (double x = -boxSize.x/4.0+(boxSize.x/2); x < boxSize.x/2.0 -(boxSize.x/20); x += h/2) {
+        for (double z = -boxSize.z/2.0; z < boxSize.z/2.0; z+= h/2) {
           firstGridCell.push_back(PARTICLE(VEC3D(x, y,z),VEC3F(0,0,1)));
         }
       }
@@ -627,7 +627,7 @@ void PARTICLE_SYSTEM::collisionForce(PARTICLE& particle) {
     
     WALL& wall = _walls[i];
     
-    double d = (wall.point() - particle.position()).dot(wall.normal()) + 0.01; // particle radius
+    double d = (wall.point() - particle.position()).dot(wall.normal()) + 0.015; // particle radius
     
     if (d > 0.0) {
       // This is an alernate way of calculating collisions of particles against walls, but produces some jitter at boundaries

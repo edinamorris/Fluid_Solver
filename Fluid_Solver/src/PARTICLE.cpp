@@ -9,7 +9,7 @@ VEC3F purpleColor(0.88,0.08,0.88);
 
 int count = 0;
 
-#define PARTICLE_DRAW_RADIUS 0.015//0.01 //0.006
+#define PARTICLE_DRAW_RADIUS 0.013//0.01 //0.006
 
 bool PARTICLE::isSurfaceVisible = false;
 bool PARTICLE::showArrows = false;

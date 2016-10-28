@@ -42,10 +42,10 @@ public:
   FIELD_2D& operator-=(const FIELD_2D& field);
 
   // accessors
-  int xRes() const { return _xRes; };
-  int yRes() const { return _yRes; };
-  int totalCells() const { return _xRes * _yRes; };
-  double*& data() { return _data; };
+  int xRes() const { return _xRes; }
+  int yRes() const { return _yRes; }
+  int totalCells() const { return _xRes * _yRes; }
+  double*& data() { return _data; }
 
   // set the size of the array
   void resize(int xRes, int yRes);
